@@ -1,4 +1,3 @@
-console.log('Yo!')
 
 
 const weatherForm= document.querySelector('form')
