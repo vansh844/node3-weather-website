@@ -3,16 +3,17 @@
 <html>
 <head>
     <title>Weather</title>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="/img/weather.png">
 </head>
 <body id="color">
     <div class="main-content">
         {{>header}}
-        <i class="fa fa-sun-o" onclick="clicky()"></i>
-        <p>Refer to this!</p>
-
         <form>
             <input placeholder="Location">
             <button>Search</button>
@@ -28,8 +29,18 @@ function myFunction() {
   document.getElementById("color").style.transition = "all 2s";     // Standard syntax
 }
 function clicky(){
-    document.getElementById('color').style.background = '#4e4e4e';
-    document.getElementById('color').style.color = '#d6d6d6';
+    if(document.getElementById('ico').classList.contains('ion-md-sunny')){
+        document.getElementById('ico').classList.remove('ion-md-sunny');
+        document.getElementById('ico').classList.add('ion-md-moon');
+        document.getElementById('color').style.background = '#222222';
+        document.getElementById('color').style.color = '#d6d6d6';
+    }
+    else{
+    document.getElementById('color').style.background = '#f1f1f1';
+    document.getElementById('color').style.color = '#333333';
+    document.getElementById('ico').classList.remove('ion-md-moon');
+    document.getElementById('ico').classList.add('ion-md-sunny');
+    }
 }
 window.onload = myFunction;
 </script>
