@@ -56,9 +56,15 @@ button{
     color: white;
     padding: 8px;
 }
-
+i{
+    cursor:pointer;
+}
 button:hover{
     color: black;
     background: #ebebeb;
     transition: 0.3s;
+}
+
+body{
+    background: #d6d6d6;
 }
